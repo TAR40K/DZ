@@ -1,5 +1,5 @@
 const quest = prompt("Your language?");
-switch (true) {
+switch (quest) {
   case quest == `Русский`:
   case quest == `русский`:
   case quest == `ru`:
