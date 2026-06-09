@@ -14,10 +14,13 @@ const ToDoList = {
 
   updateTask(id, newTitle, newPriority) {
     const task = this.tasks.find((task) => task.id === id);
-    if (task) {
-      if (newTitle) task.title = newTitle;
-      if (newPriority) task.priority = newPriority;
+    if (!task) {
+      throw new Error("Task not found");
     }
+
+    task.title = newTitle ? newTitle : task.title;
+    task.priority = newPriority ? newPriority : task.priority;
+
     return task;
   },
 
@@ -25,3 +28,9 @@ const ToDoList = {
     return this.tasks.sort((a, b) => a.priority - b.priority);
   },
 };
+
+ToDoList.addTask(`Помыть посуду`, 2);
+ToDoList.addTask(`Помыть жепу`, 5);
+ToDoList.updateTask(2, `Не мыть`, 3);
+console.log(ToDoList);
+console.log(ToDoList.tasks);
