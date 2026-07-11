@@ -20,8 +20,12 @@ function calc() {
           document.querySelector(`#resultText`).textContent = input1 * input2;
           break;
         case divide:
-          document.querySelector(`#resultText`).textContent = input1 / input2;
-          break;
+          if (input2 !== 0) {
+            document.querySelector(`#resultText`).textContent = input1 / input2;
+            break;
+          } else {
+            document.querySelector(`#resultText`).textContent = `Так нельзя`;
+          }
       }
       document.querySelector(`#num1`).value = ``;
       document.querySelector(`#num2`).value = ``;
