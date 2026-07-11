@@ -1,25 +1,37 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body style="background-color: #1c1b21; text-align: center">
-    <div class="calcPanel">
-      <div class="inPanels">
-        <input type="number" class="input input_left" />
-        <input type="number" class="input input_right" />
+  <body>
+    <div class="calculator">
+      <h1>Калькулятор</h1>
+
+      <div class="input-group">
+        <label for="num1">Число 1</label>
+        <input type="number" id="num1" placeholder="Введите число" />
       </div>
-      <div class="buttonsPanel">
-        <button class="button button_plus">+</button>
-        <button class="button button_minus">-</button>
-        <button class="button button_divide">/</button>
-        <button class="button button_multiply">x</button>
+
+      <div class="input-group">
+        <label for="num2">Число 2</label>
+        <input type="number" id="num2" placeholder="Введите число" />
       </div>
-      <input type="number" class="output" readonly />
+
+      <div class="buttons">
+        <button class="btn" data-action="add">➕ Сложение</button>
+        <button class="btn" data-action="subtract">➖ Вычитание</button>
+        <button class="btn" data-action="multiply">✖️ Умножение</button>
+        <button class="btn" data-action="divide">➗ Деление</button>
+      </div>
+
+      <div class="result">
+        <span id="resultText">0</span>
+      </div>
     </div>
-    <script src="./calc.js"></script>
+
+    <script src="app.js"></script>
   </body>
 </html>
